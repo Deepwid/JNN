@@ -26,6 +26,8 @@ public class OutputLayer extends Layer {
 
         outputLayer.setListOfNeurons(listOfNeurons);
 
+        listOfWeightOut = new ArrayList<Double>();
+
         return outputLayer;
     }
 

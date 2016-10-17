@@ -2,18 +2,21 @@ import java.util.ArrayList;
 
 /**
  * This class is neural network
+ *
  * @author Timur Kashapov
  * @since 17.10.2016
  */
 public class NeuralNetwork {
 
-    private int countOfNeurons;
-
     private InputLayer inputLayer;
-    private OutputLayer outputLayer;
-
-    private ArrayList<HiddenLayer > hiddenLayerArrayList;
+    private final int numberOfNeuronsInInputLayer = 2;
+    private HiddenLayer hiddenLayer;
+    private ArrayList<HiddenLayer> listOfHiddenLayer;
     private final int numberOfHiddenLayers = 2;
+    private final int numberOfNeuronsInHiddenLayer = 3;
+
+    private OutputLayer outputLayer;
+    private final int numberOfNeuronsInOutputLayer = 1;
 
 
     /**
@@ -21,19 +24,34 @@ public class NeuralNetwork {
      */
     public void initNet() {
 
+        /*
+         * Create phase
+         */
+
+        // Input layer
         inputLayer = new InputLayer();
-        inputLayer.initLayer(inputLayer);
+        inputLayer.setNumberOfNeuronsInLayer(numberOfNeuronsInInputLayer);
 
-        outputLayer = new OutputLayer();
-        outputLayer.initLayer(outputLayer);
-
+        // Hidden layers
+        listOfHiddenLayer = new ArrayList<HiddenLayer>();
         for (int i = 0; i < numberOfHiddenLayers; i++) {
-            HiddenLayer hiddenLayer = new HiddenLayer();
-            hiddenLayerArrayList.add(hiddenLayer);
+            hiddenLayer = new HiddenLayer();
+            hiddenLayer.setNumberOfNeuronsInLayer(numberOfNeuronsInHiddenLayer);
+            listOfHiddenLayer.add(hiddenLayer);
         }
 
-        HiddenLayer hiddenLayer = new HiddenLayer();
-        hiddenLayer.initLayer(hiddenLayer ,hiddenLayerArrayList, inputLayer, outputLayer);
+        // Output layer
+        outputLayer = new OutputLayer();
+        outputLayer.setNumberOfNeuronsInLayer(numberOfNeuronsInOutputLayer);
+
+
+        /*
+         * Initialize phase
+         */
+        inputLayer = inputLayer.initLayer(inputLayer);
+        listOfHiddenLayer = hiddenLayer.initLayer(hiddenLayer, listOfHiddenLayer, inputLayer, outputLayer);
+        outputLayer = outputLayer.initLayer(outputLayer);
+
 
     }
 
@@ -43,6 +61,10 @@ public class NeuralNetwork {
     public void printNet() {
 
         inputLayer.printLayer(inputLayer);
+        System.out.println();
+        hiddenLayer.printLayer(listOfHiddenLayer);
+        System.out.println();
+        outputLayer.printLayer(outputLayer);
     }
 
 }

@@ -28,6 +28,8 @@ public class InputLayer extends Layer {
 
         inputLayer.setListOfNeurons(listOfNeurons);
 
+        listOfWeights = new ArrayList<Double>();
+
         return inputLayer;
     }
 
