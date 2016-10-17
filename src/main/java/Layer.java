@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public abstract class Layer {
 
     private ArrayList<Neuron> listOfNeurons;
-
     private int numberOfNeuronsInLayer;
 
     /**

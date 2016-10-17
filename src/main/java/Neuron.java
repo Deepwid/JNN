@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * This basic class of neuron model
@@ -17,7 +18,7 @@ public class Neuron {
      * Initialize listOfWeightIn and listOfWeightOut function with a pseudo random real numbers
      */
     public double initNeuron() {
-        return 0.0d;
+        return new Random().nextDouble();
     }
 
     /**

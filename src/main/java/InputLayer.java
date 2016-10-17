@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
 
 /**
  * @author Timur Kashapov
@@ -11,7 +10,6 @@ public class InputLayer extends Layer {
     /**
      * Initialize the input layer with pseudo random real numbers
      */
-//    @Override
     public InputLayer initLayer(InputLayer inputLayer) {
 
         ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
@@ -20,23 +18,19 @@ public class InputLayer extends Layer {
         for (int i = 0; i < inputLayer.getNumberOfNeuronsInLayer(); i++) {
 
             Neuron neuron = new Neuron();
-            neuron.initNeuron();
+
+            listOfWeights.add(neuron.initNeuron());
             listOfNeurons.add(neuron);
 
-            listOfWeights.add(new Random().nextDouble());
+            listOfWeights = new ArrayList<Double>();
         }
-
         inputLayer.setListOfNeurons(listOfNeurons);
-
-        listOfWeights = new ArrayList<Double>();
-
         return inputLayer;
     }
 
     /**
      * Print the input weights of the layer
      */
-//    @Override
     public void printLayer(InputLayer inputLayer) {
 
         System.out.println("*** INPUT LAYER ***");

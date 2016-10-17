@@ -8,15 +8,17 @@ import java.util.ArrayList;
  */
 public class NeuralNetwork {
 
+    //
     private InputLayer inputLayer;
-    private final int numberOfNeuronsInInputLayer = 2;
+    private int numberOfNeuronsInInputLayer = 2;
+    //
     private HiddenLayer hiddenLayer;
     private ArrayList<HiddenLayer> listOfHiddenLayer;
-    private final int numberOfHiddenLayers = 2;
-    private final int numberOfNeuronsInHiddenLayer = 3;
-
+    private int numberOfHiddenLayers = 2;
+    private int numberOfNeuronsInHiddenLayer = 3;
+    //
     private OutputLayer outputLayer;
-    private final int numberOfNeuronsInOutputLayer = 1;
+    private int numberOfNeuronsInOutputLayer = 1;
 
 
     /**
