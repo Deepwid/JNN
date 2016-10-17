@@ -10,7 +10,6 @@ public class OutputLayer extends Layer {
     /**
      * Initialize weight of the output layer
      */
-//    @Override
     public OutputLayer initLayer(OutputLayer outputLayer) {
 
         ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
@@ -18,23 +17,20 @@ public class OutputLayer extends Layer {
 
         for (int i = 0; i < outputLayer.getNumberOfNeuronsInLayer(); i++) {
             Neuron neuron = new Neuron();
-            neuron.initNeuron();
+
+            listOfWeightOut.add(neuron.initNeuron());
             neuron.setListOfWeightOut(listOfWeightOut);
-
             listOfNeurons.add(neuron);
+
+            listOfWeightOut = new ArrayList<Double>();
         }
-
         outputLayer.setListOfNeurons(listOfNeurons);
-
-        listOfWeightOut = new ArrayList<Double>();
-
         return outputLayer;
     }
 
     /**
      * Print the output weights of the layer
      */
-//    @Override
     public void printLayer(OutputLayer outputLayer) {
 
         System.out.println("*** OUTPUT LAYER ***");
@@ -42,10 +38,8 @@ public class OutputLayer extends Layer {
         int n = 1;
 
         for (Neuron neuron: outputLayer.getListOfNeurons()) {
-            //
-            System.out.print("Position: " + n + " | ") ;
-            // ??? why Arrays
-            System.out.println(Arrays.deepToString(neuron.getListOfWeightIn().toArray()));
+            System.out.print("Neuron # " + n + " | ") ;
+            System.out.println(Arrays.deepToString(neuron.getListOfWeightOut().toArray()));
             n++;
         }
     }

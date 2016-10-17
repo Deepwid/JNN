@@ -13,16 +13,17 @@ public class InputLayer extends Layer {
     public InputLayer initLayer(InputLayer inputLayer) {
 
         ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
-        ArrayList<Double> listOfWeights = new ArrayList<Double>();
+        ArrayList<Double> listOfWeightsIn = new ArrayList<Double>();
 
         for (int i = 0; i < inputLayer.getNumberOfNeuronsInLayer(); i++) {
 
             Neuron neuron = new Neuron();
 
-            listOfWeights.add(neuron.initNeuron());
+            listOfWeightsIn.add(neuron.initNeuron());
+            neuron.setListOfWeightIn(listOfWeightsIn);
             listOfNeurons.add(neuron);
 
-            listOfWeights = new ArrayList<Double>();
+            listOfWeightsIn = new ArrayList<Double>();
         }
         inputLayer.setListOfNeurons(listOfNeurons);
         return inputLayer;
@@ -39,7 +40,7 @@ public class InputLayer extends Layer {
 
         for (Neuron neuron: inputLayer.getListOfNeurons()) {
             //
-            System.out.print("Position: " + n + " | ") ;
+            System.out.print("Neuron # " + n + " | ") ;
             // ??? why Arrays
             System.out.println(Arrays.deepToString(neuron.getListOfWeightIn().toArray()));
             n++;

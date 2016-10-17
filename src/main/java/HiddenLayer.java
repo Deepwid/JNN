@@ -94,6 +94,7 @@ public class HiddenLayer extends Layer {
 
         for (HiddenLayer hiddenLayer : listOfHiddenLayer) {
 
+            System.out.println();
             System.out.println("Hidden layer # " + h);
 
             int n = 1;
