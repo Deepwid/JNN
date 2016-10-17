@@ -6,7 +6,6 @@ import java.util.ArrayList;
  */
 public class HiddenLayer extends Layer {
 
-
     /**
      * Initialize weights of the hidden layers
      * @param hiddenLayer instance of hidden layer
@@ -17,6 +16,26 @@ public class HiddenLayer extends Layer {
      */
 //    @Override
     public ArrayList<HiddenLayer> initLayer(HiddenLayer hiddenLayer, ArrayList<HiddenLayer> listOfHiddenLayers, InputLayer inputLayer, OutputLayer outputLayer) {
+
+        ArrayList<Neuron> listOfNeurons = new ArrayList<Neuron>();
+        ArrayList<Double> listOfWeightIn = new ArrayList<Double>();
+        ArrayList<Double> listOfWeightOut = new ArrayList<Double>();
+
+        int numberOfHiddenLayers = listOfHiddenLayers.size();
+
+        for (int i = 0; i < numberOfHiddenLayers; i++) {
+
+            for (int j = 0; j < hiddenLayer.getNumberOfNeuronsInLayer(); j++) {
+
+                Neuron neuron = new Neuron();
+                neuron.initNeuron();
+                listOfNeurons.add(neuron);
+
+
+
+            }
+
+        }
 
 
         return new ArrayList<HiddenLayer>();

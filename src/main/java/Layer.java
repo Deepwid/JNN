@@ -7,20 +7,13 @@ import java.util.ArrayList;
  */
 public abstract class Layer {
 
-
     private ArrayList<Neuron> listOfNeurons;
 
     private int numberOfNeuronsInLayer;
 
-    /*
-    public abstract void initLayer();
-
-    public abstract void printLayer();
-    */
-
     /**
      * Set list of neurons
-     * @param listOfNeurons
+     * @param listOfNeurons list of neurons in the layer
      */
     public void setListOfNeurons(ArrayList<Neuron> listOfNeurons) {
         this.listOfNeurons = listOfNeurons;
@@ -28,7 +21,7 @@ public abstract class Layer {
 
     /**
      * Set number of neurons on the layer
-     * @param numberOfNeuronsInLayer
+     * @param numberOfNeuronsInLayer number of neurons in the layer
      */
     public void setNumberOfNeuronsInLayer(int numberOfNeuronsInLayer) {
         this.numberOfNeuronsInLayer = numberOfNeuronsInLayer;
@@ -36,7 +29,7 @@ public abstract class Layer {
 
     /**
      * Get list of neurons
-     * @return
+     * @return list of neurons
      */
     public ArrayList<Neuron> getListOfNeurons() {
         return listOfNeurons;
@@ -44,7 +37,7 @@ public abstract class Layer {
 
     /**
      * Get number of neurons on the layer
-     * @return
+     * @return number of the neurons
      */
     public int getNumberOfNeuronsInLayer() {
         return numberOfNeuronsInLayer;

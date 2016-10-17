@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * This basic class of neuron model
@@ -12,15 +11,13 @@ public class Neuron {
     private ArrayList<Double> listOfWeightIn;
 
     // // An ArrayList real numbers that represent the list of output weights values
-    private ArrayList<Double> getListOfWeightOut;
+    private ArrayList<Double> listOfWeightOut;
 
     /**
      * Initialize listOfWeightIn and listOfWeightOut function with a pseudo random real numbers
      */
     public double initNeuron() {
-        Random random = new Random();
-
-        return Math.E;
+        return 0.0d;
     }
 
     /**
@@ -35,8 +32,8 @@ public class Neuron {
      * Set list
      * @param getListOfWeightOut list of output weights
      */
-    public void setGetListOfWeightOut(ArrayList<Double> getListOfWeightOut) {
-        this.getListOfWeightOut = getListOfWeightOut;
+    public void setListOfWeightOut(ArrayList<Double> getListOfWeightOut) {
+        this.listOfWeightOut = getListOfWeightOut;
     }
 
     /**
@@ -51,7 +48,7 @@ public class Neuron {
      * Get list of output weights
      * @return list
      */
-    public ArrayList<Double> getGetListOfWeightOut() {
-        return getListOfWeightOut;
+    public ArrayList<Double> getListOfWeightOut() {
+        return listOfWeightOut;
     }
 }

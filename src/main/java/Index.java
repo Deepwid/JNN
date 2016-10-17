@@ -6,6 +6,9 @@ public class Index {
 
     public static void main(String[] args) {
 
+        NeuralNetwork aNN = new NeuralNetwork();
 
+        aNN.initNet();
+        aNN.printNet();
     }
 }
